@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Privy Modal Positioning Fix */
+[data-privy-modal] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 9999 !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+}
+
+[data-privy-overlay] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 9998 !important;
+}
+
+/* Additional Privy selectors */
+.privy-modal, 
+[class*="modal"],
+[class*="Modal"],
+div[role="dialog"] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 9999 !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+}
+
+/* Privy container fix */
+#privy-modal-root,
+#privy-modal,
+[data-privy="modal"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Global modal fix - catch all modals */
+body > div[style*="position: absolute"],
+body > div[style*="position: fixed"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* PC-specific modal centering fix */
+@media (min-width: 768px) {
+  .mx-4 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    margin-top: 100vh !important;
+    transform: translateY(-50%) !important;
+  }
+}
+
+/* Enhanced Privy Modal Detection - catch everything */
+div[class*="privy"],
+div[id*="privy"],
+div[data-testid*="privy"],
+iframe[src*="privy"] {
+  z-index: 99999 !important;
+  position: fixed !important;
+}
+
+/* Force all potential modal containers to high z-index */
+body > div:last-child,
+body > div[style*="position: fixed"]:last-child {
+  z-index: 99999 !important;
+}
+
+/* Target specific Privy modal elements that are being created */
+#privy-dialog {
+  z-index: 99999 !important;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#privy-dialog-backdrop {
+  z-index: 99998 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#privy-modal-content {
+  z-index: 99999 !important;
+  position: relative !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure modal backdrop/overlay is visible */
+div[style*="position: fixed"][style*="inset: 0"] {
+  z-index: 99998 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Force any modal content to be centered */
+body > div > div[style*="max-width"],
+body > div > div[style*="width"] {
+  position: relative !important;
+  max-width: 400px !important;
+  width: 90% !important;
+  margin: auto !important;
+}
+
+/* Privy specific modal fixes */
+div[data-headlessui-state] {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 9999 !important;
+}
+
+/* Additional modal container fixes */
+body > div:last-child {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 9999 !important;
+}
