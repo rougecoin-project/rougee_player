@@ -1,5 +1,7 @@
 # Rougee Player - Music Streaming Platform with Creator Coins
 
+🌐 **Live Demo**: [https://rougeeplayer.netlify.app/](https://rougeeplayer.netlify.app/)
+
 ## 🎵 Overview
 
 Rougee Player is a modern music streaming platform that integrates a revolutionary Creator Coin system, allowing fans to invest in and trade tokens for their favorite artists. Built with Next.js, TypeScript, and Tailwind CSS, the platform combines traditional music streaming with innovative tokenized fan engagement.
@@ -234,6 +236,26 @@ The platform is optimized for mobile devices. Test on:
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
+
+## 🌐 Deployment
+
+### **Live Frontend**
+- **URL**: [https://rougeeplayer.netlify.app/](https://rougeeplayer.netlify.app/)
+- **Platform**: Netlify (auto-deploy from main branch)
+- **Status**: ✅ Production ready
+
+### **Local Development**
+```bash
+npm install
+npm run dev
+# Open http://localhost:3000
+```
+
+### **Production Build**
+```bash
+npm run build
+npm start
+```
 
 ## 📄 License
 
